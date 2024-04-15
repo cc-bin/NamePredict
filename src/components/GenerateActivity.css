@@ -1,0 +1,36 @@
+.Generate-Activity-MainContainer{
+    width: fit-content;
+    flex-direction: column;
+    display: flex;
+    align-items: start;
+}
+
+.Generate-Activity-Title{
+    font-size: 18px;
+    line-height: 0px;
+}
+
+.Generate-Activity-Input{
+    width: 150px;
+    height: 30px;
+    margin-top: 0px;
+}
+
+.Generate-Activity-Get-Container{
+    width: 100%;
+}
+
+.Generate-Activity-Get{
+    width: 80px;
+    height: 25px;
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+    background-color: #4d6dde;
+    border-radius: 40px;
+    border: none;
+}
+
+.ContentContainer{
+
+}
