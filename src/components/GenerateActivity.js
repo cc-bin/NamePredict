@@ -8,6 +8,25 @@ export default function GenerateActivity() {
   const [activityData, setActivityData] = useState({});
   const [params, setParams] = useState();
 
+  const fetchActivityData = () => {
+    const par = {
+      type: document.getElementById("activityType").value,
+      participants: document.getElementById("activityParticipants").value,
+      maxPrice: document.getElementById("activityPrice").value,
+      accessibility: document.getElementById("activityAccessibility").value,
+    };
+    setParams(par);
+
+    BoredApi.boredAPi.getActivity(par).then((value) => {
+      if (value.error) {
+        alert(value.error);
+      } else {
+        setActivityData(value);
+        setShowActivityModal(true);
+      }
+    });
+  };
+
   return (
     <div className="Generate-Activity-MainContainer">
       <p className="Generate-Activity-Title">Activity type</p>
@@ -29,9 +48,9 @@ export default function GenerateActivity() {
         id="activityParticipants"
         type="number"
         className="Generate-Activity-Input"
-        placeholder="[0,8]"
+        placeholder="[0,n]"
         min="0"
-        max="8"
+        max="99"
         step="1"
       />
 
@@ -61,19 +80,7 @@ export default function GenerateActivity() {
         <button
           className="Generate-Activity-Get"
           onClick={(e) => {
-            setParams({
-              type: document.getElementById("activityType").value,
-              participants: document.getElementById("activityParticipants")
-                .value,
-              maxPrice: document.getElementById("activityPrice").value,
-              accessibility: document.getElementById("activityAccessibility")
-                .value,
-            });
-
-            BoredApi.boredAPi.getActivity(params).then((value) => {
-              setActivityData(value);
-              setShowActivityModal(true);
-            });
+            fetchActivityData();
           }}
         >
           Get
@@ -86,6 +93,9 @@ export default function GenerateActivity() {
         params={params}
         onClose={() => {
           setShowActivityModal(false);
+        }}
+        onRefresh={() => {
+          fetchActivityData();
         }}
       />
     </div>

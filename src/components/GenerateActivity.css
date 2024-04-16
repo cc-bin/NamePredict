@@ -34,11 +34,10 @@
     margin-top: 10px;
     background-color: #4d6dde;
     border-radius: 40px;
-    border: none;
-    transition: background-color 0.3s;
+    border: transparent;
 }
 
-.Generate-Activity-Get.active{
+.Generate-Activity-Get:active{
     opacity: 0.6;
 }
 

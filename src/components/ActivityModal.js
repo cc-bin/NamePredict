@@ -7,7 +7,7 @@ import refreshIcon from "../img/refresh.svg";
 import shareIcon from "../img/share.svg";
 import { activityShare } from "../utils/Utils";
 
-export default function ActivityModal({ isOpen, data, onClose }) {
+export default function ActivityModal({ isOpen, data, onClose, onRefresh }) {
   console.log(data);
   return (
     <Modal
@@ -50,7 +50,7 @@ export default function ActivityModal({ isOpen, data, onClose }) {
           </div>
         </div>
         <div className="Activity-Modal-Main-Container">
-          <button className="Activity-Modal-LeftButton" onClick={() => {}}>
+          <button className="Activity-Modal-LeftButton" onClick={onRefresh}>
             <img src={refreshIcon} className="Activity-Modal-Button-Icon" />
           </button>
           <div className="Activity-Modal-Button-Line" />

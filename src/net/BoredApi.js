@@ -35,7 +35,7 @@ export default class BoredApi {
       } else {
         console.log("Error", err.message);
       }
-      alert(err.config);
+      alert(JSON.stringify(err));
     }
   }
 }
