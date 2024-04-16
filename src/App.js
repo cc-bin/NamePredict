@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Switch from "./components/Switch";
 import GenerateActivity from "./components/GenerateActivity";
 import { BottomNavigation } from "reactjs-bottom-navigation";
 import happyIcon from "./img/happy.svg";
@@ -13,7 +11,7 @@ function App() {
   const [itemId, setItemId] = useState(0);
   const bottomNavItems = [
     {
-      title: "Generate",
+      title: "Get Activity",
       onClick: ({ id }) => setItemId(id),
       icon: <img style={styles.icon} src={boredIcon} alt="" />,
       activeIcon: <img style={styles.icon} src={happyIcon} alt="" />,
@@ -36,6 +34,7 @@ function App() {
         <div className="MainContent">
           {itemId == 0 ? <GenerateActivity /> : null}
           <BottomNavigation
+            className="BottomNavigatorBar"
             items={bottomNavItems}
             selected={0}
             onItemClick={(item) => console.log(item)}
@@ -54,5 +53,9 @@ const styles = {
   icon: {
     width: "35px",
     height: "35px",
+  },
+  bottomNavigation: {
+    width: "100%",
+    height: "50px",
   },
 };

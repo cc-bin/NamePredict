@@ -1,0 +1,79 @@
+.Activity-Modal-Main-Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.Activity-Modal-Content-Container{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.Activity-Modal-Content-Container2 {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+
+.Activity-Modal-Title{
+    display: flex;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-right: 12px;
+    color: #c0c0c0;
+    flex: 1;
+}
+
+.Activity-Modal-SubText{
+    display: flex;
+    flex: 0.8;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.Activity-Modal-Close{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    height: 30px;
+    width: 30px;
+}
+
+.Activity-Modal-LeftButton{
+    flex: 1;
+    height: 48px;
+    border: transparent;
+    background-color: #f9df6f;
+}
+
+.Activity-Modal-LeftButton:active{
+    opacity: 0.6;
+}
+
+.Activity-Modal-RightButton{
+    flex: 1;
+    height: 48px;
+    border: transparent;
+    background-color: #4d6dde;
+}
+
+.Activity-Modal-RightButton:active{
+    opacity: 0.6;
+}
+
+
+.Activity-Modal-Button-Line{
+    width: 1px;
+    height: 48px;
+    background-color: #b3b3b3;
+}
+
+.Activity-Modal-Button-Icon{
+    height: 48px;
+    width: 48px;
+}

@@ -16,6 +16,12 @@
     margin-top: 0px;
 }
 
+.Generate-Activity-Select{
+    width: 157px;
+    height: 35px;
+    margin-top: 0px;
+}
+
 .Generate-Activity-Get-Container{
     width: 100%;
 }
@@ -29,6 +35,11 @@
     background-color: #4d6dde;
     border-radius: 40px;
     border: none;
+    transition: background-color 0.3s;
+}
+
+.Generate-Activity-Get.active{
+    opacity: 0.6;
 }
 
 .ContentContainer{
