@@ -48,10 +48,21 @@
     flex: 1;
     height: 48px;
     border: transparent;
-    background-color: #f9df6f;
+    background-color: #dd6464;
 }
 
 .Activity-Modal-LeftButton:active{
+    opacity: 0.6;
+}
+
+.Activity-Modal-CenterButton{
+    flex: 1;
+    height: 48px;
+    border: transparent;
+    background-color: #f9df6f;
+}
+
+.Activity-Modal-CenterButton:active{
     opacity: 0.6;
 }
 
@@ -74,6 +85,6 @@
 }
 
 .Activity-Modal-Button-Icon{
-    height: 48px;
-    width: 48px;
+    height: 45px;
+    width: 45px;
 }

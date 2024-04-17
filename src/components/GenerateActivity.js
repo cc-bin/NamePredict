@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./GenerateActivity.css";
 import BoredApi from "../net/BoredApi";
 import ActivityModal from "./ActivityModal";
+import { showToast } from "./GlobalToast";
 
 export default function GenerateActivity() {
   const [showActivityModal, setShowActivityModal] = useState(false);
@@ -17,9 +18,10 @@ export default function GenerateActivity() {
     };
     setParams(par);
 
+    showToast("please wait...", "success");
     BoredApi.boredAPi.getActivity(par).then((value) => {
       if (value.error) {
-        alert(value.error);
+        showToast(value.error, "error");
       } else {
         setActivityData(value);
         setShowActivityModal(true);

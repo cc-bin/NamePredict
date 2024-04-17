@@ -1,8 +1,16 @@
 .App {
   text-align: center;
-  max-height: 100vh;
-  min-height: 85vh;
+  height: 100vh - 40px;
   width: 100%;
+}
+
+.App-Background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  z-index: -1;
+  object-fit: cover;
 }
 
 .App-logo {
@@ -33,8 +41,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-height: 100vh;
-  min-height: 85vh;
+  height: calc(100vh - 40px);
 }
 
 .MainContent{
@@ -45,8 +52,7 @@
   display: flex;
   justify-content: center;
   align-items: center; 
-  overflow-y: scroll;
-  padding-bottom: 65px;
+  overflow: hidden;
 }
 
 .Params{
@@ -65,7 +71,6 @@
 
 .Toolbar{
   display: flex;
-  background-color: #4d6dde;
   height: 55px;
   width: 100%;
   flex-direction: row;
@@ -74,7 +79,7 @@
 
 .ToolbarTitle{
   display: flex;
-  font-size: 22px;
+  font-size: 26px;
   color: white;
   width: fit-content;
   margin-left: 12px;

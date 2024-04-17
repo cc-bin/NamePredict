@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import "./ActivityModal.css";
 
 import closeIcon from "../img/close.svg";
-import refreshIcon from "../img/refresh.svg";
+import refreshIcon from "../img/refresh_white.svg";
 import shareIcon from "../img/share.svg";
+import collectIcon from "../img/collect_white.svg";
 import { activityShare } from "../utils/Utils";
+import { showToast } from "./GlobalToast";
 
 export default function ActivityModal({ isOpen, data, onClose, onRefresh }) {
-  console.log(data);
+  const [collectList, setCollectList] = useState([]);
+
+  useEffect(() => {
+    const savedDataList = localStorage.getItem("collectList");
+    if (savedDataList) {
+      setCollectList(JSON.parse(savedDataList));
+    }
+  }, []);
   return (
     <Modal
       isOpen={isOpen}
@@ -50,7 +59,28 @@ export default function ActivityModal({ isOpen, data, onClose, onRefresh }) {
           </div>
         </div>
         <div className="Activity-Modal-Main-Container">
-          <button className="Activity-Modal-LeftButton" onClick={onRefresh}>
+          <button
+            className="Activity-Modal-LeftButton"
+            onClick={() => {
+              let newCollectList = [];
+              if (collectList.length >= 50) {
+                newCollectList = [...collectList.slice(1), data];
+              } else {
+                newCollectList = [...collectList, data];
+              }
+              console.log(JSON.stringify(newCollectList));
+              setCollectList(newCollectList);
+              localStorage.setItem(
+                "collectList",
+                JSON.stringify(newCollectList)
+              );
+              showToast("Collect success", "success");
+            }}
+          >
+            <img src={collectIcon} className="Activity-Modal-Button-Icon" />
+          </button>
+          <div className="Activity-Modal-Button-Line" />
+          <button className="Activity-Modal-CenterButton" onClick={onRefresh}>
             <img src={refreshIcon} className="Activity-Modal-Button-Icon" />
           </button>
           <div className="Activity-Modal-Button-Line" />

@@ -6,6 +6,9 @@ import happyIcon from "./img/happy.svg";
 import boredIcon from "./img/bored.svg";
 import collectSelectIcon from "./img/collect_select.svg";
 import collectUnSelectIcon from "./img/collect_unselect.svg";
+import bg from "./img/bg2.png";
+import GlobalToast from "./components/GlobalToast";
+import CollectList from "./components/CollectList";
 
 function App() {
   const [itemId, setItemId] = useState(0);
@@ -26,15 +29,17 @@ function App() {
 
   return (
     <div className="App">
-      <header className="MainContainer">
+      <img src={bg} className="App-Background" />
+      <div className="MainContainer">
         <div className="Toolbar">
           <p className="ToolbarTitle">Bored</p>
         </div>
 
         <div className="MainContent">
-          {itemId == 0 ? <GenerateActivity /> : null}
+          {itemId == 0 ? <GenerateActivity /> : <CollectList />}
+        </div>
+        <div className="BottomNavigatorBar">
           <BottomNavigation
-            className="BottomNavigatorBar"
             items={bottomNavItems}
             selected={0}
             onItemClick={(item) => console.log(item)}
@@ -42,7 +47,8 @@ function App() {
             activeTextColor="white"
           />
         </div>
-      </header>
+        <GlobalToast />
+      </div>
     </div>
   );
 }
