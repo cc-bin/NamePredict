@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import GenerateActivity from "./components/GenerateActivity";
 import { BottomNavigation } from "reactjs-bottom-navigation";
@@ -12,6 +12,8 @@ import CollectList from "./components/CollectList";
 
 function App() {
   const [itemId, setItemId] = useState(0);
+  const [bottomNavHeight, setBottomNavHeight] = useState(0);
+  const navItemRef = useRef(null);
   const bottomNavItems = [
     {
       title: "Get Activity",
@@ -27,6 +29,14 @@ function App() {
     },
   ];
 
+  useEffect(() => {
+    const navItem = document.querySelector(".bottom-nav");
+    if (navItem) {
+      const navItemHeight = navItem.offsetHeight;
+      setBottomNavHeight(navItemHeight);
+    }
+  }, []);
+
   return (
     <div className="App">
       <img src={bg} className="App-Background" />
@@ -38,7 +48,11 @@ function App() {
         <div className="MainContent">
           {itemId == 0 ? <GenerateActivity /> : <CollectList />}
         </div>
-        <div className="BottomNavigatorBar">
+        <div
+          className="BottomNavigatorBar"
+          id="bottomNavigation"
+          style={{ height: bottomNavHeight }}
+        >
           <BottomNavigation
             items={bottomNavItems}
             selected={0}

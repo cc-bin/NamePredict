@@ -15,10 +15,12 @@ export default function CollectList() {
     <div className="collect-list-container">
       <div className="collect-list">
         {collectList.map((item, index) => {
-          console.log(JSON.stringify(item));
           return (
-            <div className="collect-item" key={index}>
-              <p className="collect-title">{item.activity}</p>
+            <div className="collect-item-container" key={index}>
+              <p className="collect-type">{item.type}</p>
+              <div className="collect-item">
+                <p className="collect-activity">{item.activity}</p>
+              </div>
             </div>
           );
         })}
