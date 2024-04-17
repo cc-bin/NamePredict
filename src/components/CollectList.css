@@ -15,6 +15,16 @@
     overflow-y: auto ;
 }
 
+.collect-empty-tip{
+    font-size: 24px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 12px;
+    color: white ;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.77);
+}
+
 .collect-item-container{
     position: relative;
     background-color: rgba(255, 255, 255, 0.85);

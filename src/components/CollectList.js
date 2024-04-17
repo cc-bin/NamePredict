@@ -20,28 +20,34 @@ export default function CollectList() {
   return (
     <div className="collect-list-container">
       <div className="collect-list">
-        {collectList.map((item, index) => {
-          return (
-            <div className="collect-item-container" key={index}>
-              <p className="collect-type">{item.type}</p>
-              <img
-                src={shareBlueIcon}
-                className="collect-share"
-                onClick={() => {
-                  activityShare(item);
-                }}
-              />
-              <div className="collect-item">
-                <p className="collect-activity">{item.activity}</p>
-                <div className="collect-item-detail">
-                  {CollectDetailItem(priceIcon, item.price)}
-                  {CollectDetailItem(participantsIcon, item.participants)}
-                  {CollectDetailItem(accessibilityIcon, item.accessibility)}
+        {collectList.length == 0 ? (
+          <p className="collect-empty-tip">
+            There are currently no collections, go get the event now!
+          </p>
+        ) : (
+          collectList.map((item, index) => {
+            return (
+              <div className="collect-item-container" key={index}>
+                <p className="collect-type">{item.type}</p>
+                <img
+                  src={shareBlueIcon}
+                  className="collect-share"
+                  onClick={() => {
+                    activityShare(item);
+                  }}
+                />
+                <div className="collect-item">
+                  <p className="collect-activity">{item.activity}</p>
+                  <div className="collect-item-detail">
+                    {CollectDetailItem(priceIcon, item.price)}
+                    {CollectDetailItem(participantsIcon, item.participants)}
+                    {CollectDetailItem(accessibilityIcon, item.accessibility)}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </div>
     </div>
   );
