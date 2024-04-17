@@ -33,6 +33,6 @@ const GlobalToast = () => {
 
 export default GlobalToast;
 
-export const showToast = (message, type, dur = 3000) => {
+export const showToast = (message, type = "success", dur = 3000) => {
   showToastFunction(message, type, dur);
 };

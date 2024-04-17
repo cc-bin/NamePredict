@@ -1,3 +1,5 @@
+import { showToast } from "../components/GlobalToast";
+
 export function activityShare(data) {
   const text =
     "Activity: " +
@@ -18,22 +20,13 @@ export function activityShare(data) {
 }
 
 export function share(text) {
-  if (!navigator.share) {
-    copyToClipboard(text)
-      .then(() => {
-        alert(
-          "Your browser does not support sharing\nActivity copied to clipboard!"
-        );
-      })
-      .catch((error) => {
-        alert("Error copying activity!");
-      });
-  } else {
-    navigator.share({
-      title: "Bored",
-      text: text,
+  copyToClipboard(text)
+    .then(() => {
+      showToast("Activity copied to clipboard!");
+    })
+    .catch((error) => {
+      showToast("Error copying activity!");
     });
-  }
 }
 
 function copyToClipboard(textToCopy) {
