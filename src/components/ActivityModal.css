@@ -42,6 +42,7 @@
     right: 12px;
     height: 30px;
     width: 30px;
+    cursor: pointer;
 }
 
 .Activity-Modal-LeftButton{
@@ -49,6 +50,7 @@
     height: 48px;
     border: transparent;
     background-color: #dd6464;
+    cursor: pointer;
 }
 
 .Activity-Modal-LeftButton:active{
@@ -60,6 +62,7 @@
     height: 48px;
     border: transparent;
     background-color: #f9df6f;
+    cursor: pointer;
 }
 
 .Activity-Modal-CenterButton:active{
@@ -71,6 +74,7 @@
     height: 48px;
     border: transparent;
     background-color: #4d6dde;
+    cursor: pointer;
 }
 
 .Activity-Modal-RightButton:active{

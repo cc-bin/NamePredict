@@ -4,16 +4,16 @@ export function activityShare(data) {
   const text =
     "Activity: " +
     data.activity +
-    "\n" +
+    "\n\n" +
     "Type: " +
     data.type +
-    "\n" +
+    "\n\n" +
     "Participants: " +
     data.participants +
-    "\n" +
+    "\n\n" +
     "Price: " +
     data.price +
-    "\n" +
+    "\n\n" +
     "Accessibility: " +
     data.accessibility;
   share(text);

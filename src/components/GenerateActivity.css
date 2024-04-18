@@ -1,16 +1,37 @@
-.Generate-Activity-MainContainer{
+.Generate-Activity-Container{
+    position: relative;
     width: fit-content;
-    flex-direction: column;
-    display: flex;
-    align-items: start;
     background-color: rgba(255, 255, 255, 0.77);
-    padding: 20px 50px 20px 50px;
     border-radius: 15px;
+}
+
+.Generate-Activity-MainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 15px 50px 20px 50px;
+
 }
 
 .Generate-Activity-Title{
     font-size: 18px;
-    line-height: 0px;
+    margin: 12px 0px 0px 0px;
+}
+
+.Generate-Activity-Tips{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+}
+
+.Generate-Activity-Has-Tips-Container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 150px;
 }
 
 .Generate-Activity-Input{
@@ -23,6 +44,9 @@
     width: 157px;
     height: 35px;
     margin-top: 0px;
+    background-color: white;
+    border-radius: 2px;
+    cursor: pointer;
 }
 
 .Generate-Activity-Get-Container{
@@ -38,6 +62,7 @@
     background-color: #4d6dde;
     border-radius: 40px;
     border: transparent;
+    cursor: pointer;
 }
 
 .Generate-Activity-Get:active{

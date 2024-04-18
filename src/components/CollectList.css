@@ -23,13 +23,14 @@
     color: white ;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     background-color: rgba(0, 0, 0, 0.77);
+    border-radius: 15px;
 }
 
 .collect-item-container{
     position: relative;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 15px;
     height: fit-content;
     margin-left: 12px;
     margin-right: 12px;
@@ -57,6 +58,7 @@
     right: 12px;
     width: 28px;
     height: 28px;
+    cursor: pointer;
 }
 
 .collect-share:active{
