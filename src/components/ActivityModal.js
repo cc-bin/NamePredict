@@ -44,7 +44,7 @@ export default function ActivityModal({ isOpen, data, onClose, onRefresh }) {
           </div>
 
           <div className="Activity-Modal-Main-Container">
-            <p className="Activity-Modal-Title">Price</p>
+            <p className="Activity-Modal-Title">Expense level</p>
             <p className="Activity-Modal-SubText">{data.price}</p>
           </div>
 

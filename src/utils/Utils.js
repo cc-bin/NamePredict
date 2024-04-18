@@ -11,7 +11,7 @@ export function activityShare(data) {
     "Participants: " +
     data.participants +
     "\n\n" +
-    "Price: " +
+    "Expense level: " +
     data.price +
     "\n\n" +
     "Accessibility: " +

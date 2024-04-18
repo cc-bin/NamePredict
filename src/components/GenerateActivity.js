@@ -62,12 +62,12 @@ export default function GenerateActivity() {
           step="1"
         />
 
-        <p className="Generate-Activity-Title">Price</p>
+        <p className="Generate-Activity-Title">Expense level</p>
         <input
           id="activityPrice"
           type="number"
           className="Generate-Activity-Input"
-          placeholder="[0.0, 1.0] Expense level  "
+          placeholder="[0.0, 1.0]"
           min="0"
           max="1"
           step="0.1"
