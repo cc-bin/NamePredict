@@ -22,7 +22,7 @@ export default function CollectList() {
       <div className="collect-list">
         {collectList.length == 0 ? (
           <p className="collect-empty-tip">
-            There are currently no collections, go get the event now!
+            There are currently no collections, go get the activity now!
           </p>
         ) : (
           collectList.map((item, index) => {
