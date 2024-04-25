@@ -47,7 +47,7 @@ function App() {
         </div>
 
         <div className="MainContent">
-          {itemId == 0 ? GenderizePage() : NationalityPage()}
+          {itemId == 0 ? <GenderizePage /> : <NationalityPage />}
         </div>
         <div
           className="BottomNavigatorBar"

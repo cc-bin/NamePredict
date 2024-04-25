@@ -1,5 +1,4 @@
-import { Input } from "postcss";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import "./CommonNamePage.css";
 import searchIcon from "../img/search.svg";
 
@@ -26,6 +25,18 @@ export default function CommonNamePage({ id, title, color, api }) {
     }
   };
 
+  function formatResult(data) {
+    var name = data.name;
+    var countries = data.country.map(
+      (country) =>
+        `${country.country_id} (${(country.probability * 100).toFixed(0)}%)`
+    );
+    var result = `${name} is from ${countries.join(", ")} with ${
+      countries[0]
+    } certainty`;
+    return result;
+  }
+
   return (
     <div className="Name-Main-Container">
       <pre className="Name-Title">{title}</pre>
@@ -49,10 +60,14 @@ export default function CommonNamePage({ id, title, color, api }) {
       {loading ? (
         <p className="Name-Result">Predict...</p>
       ) : genderData ? (
-        <p className="Name-Result">
-          {genderData.name} is {genderData.gender} with{" "}
-          {Math.round(genderData.probability * 100)}% certainty
-        </p>
+        id === 0 ? (
+          <p className="Name-Result">
+            {genderData.name} is {genderData.gender} with{" "}
+            {Math.round(genderData.probability * 100)}% certainty
+          </p>
+        ) : (
+          <p className="Name-Result">{formatResult(genderData)}</p>
+        )
       ) : (
         <p className="Name-Result"></p>
       )}
