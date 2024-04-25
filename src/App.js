@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
-import GenerateActivity from "./components/GenerateActivity";
 import { BottomNavigation } from "reactjs-bottom-navigation";
-import happyIcon from "./img/happy.svg";
-import boredIcon from "./img/bored.svg";
-import collectSelectIcon from "./img/collect_select.svg";
-import collectUnSelectIcon from "./img/collect_unselect.svg";
+import genderIcon from "./img/gender.svg";
+import nationalitySelectIcon from "./img/nationality_select.svg";
+import nationalityUnSelectIcon from "./img/nationality_unselect.svg";
 import bg from "./img/bg2.png";
 import GlobalToast from "./components/GlobalToast";
-import CollectList from "./components/CollectList";
+import GenderizePage from "./components/GenderizePage";
+import NationalityPage from "./components/NationalityPage";
 
 function App() {
   const [itemId, setItemId] = useState(0);
@@ -16,16 +15,18 @@ function App() {
   const navItemRef = useRef(null);
   const bottomNavItems = [
     {
-      title: "Get Activity",
+      title: "Genderize",
       onClick: ({ id }) => setItemId(id),
-      icon: <img style={styles.icon} src={boredIcon} alt="" />,
-      activeIcon: <img style={styles.icon} src={happyIcon} alt="" />,
+      icon: <img style={styles.icon} src={genderIcon} alt="" />,
+      activeIcon: <img style={styles.icon} src={genderIcon} alt="" />,
     },
     {
-      title: "Collect",
+      title: "Nationality",
       onClick: ({ id }) => setItemId(id),
-      icon: <img style={styles.icon} src={collectUnSelectIcon} alt="" />,
-      activeIcon: <img style={styles.icon} src={collectSelectIcon} alt="" />,
+      icon: <img style={styles.icon} src={nationalityUnSelectIcon} alt="" />,
+      activeIcon: (
+        <img style={styles.icon} src={nationalitySelectIcon} alt="" />
+      ),
     },
   ];
 
@@ -42,11 +43,11 @@ function App() {
       <img src={bg} className="App-Background" />
       <div className="MainContainer">
         <div className="Toolbar">
-          <p className="ToolbarTitle">Bored</p>
+          <p className="ToolbarTitle">Predict By Name</p>
         </div>
 
         <div className="MainContent">
-          {itemId == 0 ? <GenerateActivity /> : <CollectList />}
+          {itemId == 0 ? GenderizePage() : NationalityPage()}
         </div>
         <div
           className="BottomNavigatorBar"
@@ -57,7 +58,7 @@ function App() {
             items={bottomNavItems}
             selected={0}
             onItemClick={(item) => console.log(item)}
-            activeBgColor="#4d6dde"
+            activeBgColor={itemId === 0 ? "#e78959" : "#46bf6a"}
             activeTextColor="white"
           />
         </div>
