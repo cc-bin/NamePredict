@@ -5,10 +5,10 @@
     ],
     "target": {
       "namespace": "android_app",
-      "package_name": "lat.mdshgjweijgwe.twa",
+      "package_name": "autos.hyiuhwegnznwegd.twa",
       "sha256_cert_fingerprints": [
-        "88:F5:FD:BE:7F:27:8C:79:00:5B:97:9F:F2:21:3B:29:F8:E5:A7:0A:B7:3F:D9:D8:80:69:32:1B:94:84:51:56",
-        "E5:92:F0:A9:4B:26:A5:08:6B:FD:FD:DB:8F:C0:88:FC:C6:A3:0A:A0:67:A4:84:BE:90:CA:42:CD:F5:49:87:2A"
+        "35:E3:BF:5D:54:25:C0:09:B6:24:96:8F:0B:E9:77:43:C2:11:A4:27:BF:32:D2:1A:BA:8E:08:64:95:E9:4F:A1",
+        "DC:9C:3D:4F:1A:AA:D5:28:42:66:B5:67:F3:DD:9E:65:A6:8C:D4:B9:54:E7:8B:FC:C9:0B:C0:47:A6:4B:60:8D"
       ]
     }
   }

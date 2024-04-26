@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "autos.hyiuhwegnznwegd.twa",
+        "sha256_cert_fingerprints": ["DC:9C:3D:4F:1A:AA:D5:28:42:66:B5:67:F3:DD:9E:65:A6:8C:D4:B9:54:E7:8B:FC:C9:0B:C0:47:A6:4B:60:8D"]
+      }
+    }]
